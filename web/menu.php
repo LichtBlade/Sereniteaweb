@@ -156,7 +156,7 @@ form button {
     <table border="1">
         <thead>
             <tr>
-                <th>ID</th>
+                
                 <th>Name</th>
                 <th>Image</th>
                 <th>Price</th>
@@ -182,7 +182,7 @@ form button {
     <table border="1">
         <thead>
             <tr>
-                <th>ID</th>
+                
                 <th>Name</th>
                 <th>Image</th>
                 <th>Small Price</th>
@@ -248,7 +248,7 @@ form button {
                         if (item.category === "Food") {
                             foodHtml += `
                                 <tr>
-                                    <td>${item.id}</td>
+                                    
                                     <td>${item.name}</td>
                                     <td><img src="${item.image_path}" width="50"></td>
                                     <td>${item.price}</td>
@@ -262,7 +262,7 @@ form button {
                         } else if (item.category === "Beverages") {
                             beverageHtml += `
                                 <tr>
-                                    <td>${item.id}</td>
+                                   
                                     <td>${item.name}</td>
                                     <td><img src="${item.image_path}" width="50"></td>
                                     <td>${item.small_price}</td>

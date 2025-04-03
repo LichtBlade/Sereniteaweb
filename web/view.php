@@ -1,11 +1,9 @@
 
 <?php
 session_start();
-if (!isset($_SESSION['user'])) {
-    header('Location: login.php'); // Redirect to Login if not logged in
-    exit();
-}
+
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -175,8 +173,9 @@ if (!isset($_SESSION['user'])) {
       <img src="uploads/logo.png" alt="Categories Image">
       <button class="category-btn" onclick="loadContent('dashboard.php',this)">Dashboard</button>
       <button class="category-btn" onclick="loadContent('menu.php',this)">Menu</button>
-      <button class="category-btn" onclick="loadContent('customer.html',this)">User</button>
-      <button class="category-btn" onclick="loadContent('orders.html',this)">Orders</button>
+      <button class="category-btn" onclick="loadContent('fetch_all_user.php',this)">User</button>
+      <button class="category-btn" onclick="loadContent('orders.php',this)">Orders</button>
+      <button class="category-btn" onclick="loadContent('user_profile.php',this)">Profile</button>
       <button class="logout-btn" onclick="logout()">Logout</button>
     </div>
     <div class="right-section" id="rightSection">
