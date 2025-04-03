@@ -31,6 +31,24 @@ while ($row = $result->fetch_assoc()) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>View Orders</title>
     <link rel="stylesheet" href="styles.css">
+
+    <style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
 </head>
 <body>
 
@@ -64,26 +82,22 @@ while ($row = $result->fetch_assoc()) {
                             <td data-label="Contact Number"><?= htmlspecialchars($order['contact_number']) ?></td>
                             <td data-label="Address"><?= htmlspecialchars($order['address']) ?></td>
                             <td>
-                                <!-- Accept Button to update order status to Pending -->
-                                <?php if ($order['status'] !== 'Pending' && $order['status'] !== 'Complete'): ?>
+                               <!-- Accept Button to update order status to Pending -->
+                               <?php if ($order['status'] === 'Add to Cart' || $order['status'] === 'add to cart'): ?>
                                     <form method="POST" action="process_order.php">
                                         <input type="hidden" name="order_id" value="<?= $order['id'] ?>">
                                         <input type="hidden" name="action" value="accept">
                                         <button type="submit">Accept</button>
                                     </form>
-                                <?php else: ?>
-                                    <span>Already Accepted</span>
                                 <?php endif; ?>
 
                                 <!-- OFD Button to update order status to 'ofd' -->
-                                <?php if ($order['status'] === 'Pending'): ?>
+                                <?php if ($order['status'] === 'Pending' || $order['status'] === 'pending'): ?>
                                     <form method="POST" action="process_order.php">
                                         <input type="hidden" name="order_id" value="<?= $order['id'] ?>">
                                         <input type="hidden" name="action" value="pending">
                                         <button type="submit">OFD</button>
                                     </form>
-                                <?php elseif ($order['status'] === 'ofd'): ?>
-                                    <span>OFD</span>
                                 <?php endif; ?>
 
                                 <!-- Delivered Button to update order status to Delivered -->
@@ -93,20 +107,19 @@ while ($row = $result->fetch_assoc()) {
                                         <input type="hidden" name="action" value="ofd">
                                         <button type="submit">Delivered</button>
                                     </form>
-                                <?php elseif ($order['status'] === 'delivered'): ?>
-                                    <span>Delivered</span>
                                 <?php endif; ?>
 
                                 <!-- Complete Button to update order status to Complete -->
-                                <?php if ($order['status'] === 'delivered'): ?>
+                                <?php if ($order['status'] === 'delivered' || $order['status'] === 'delivered'): ?>
                                     <form method="POST" action="process_order.php">
                                         <input type="hidden" name="order_id" value="<?= $order['id'] ?>">
                                         <input type="hidden" name="action" value="deliver">
                                         <button type="submit">Complete</button>
                                     </form>
-                                <?php elseif ($order['status'] === 'complete'): ?>
+                                <?php elseif ($order['status'] === 'complete' || $order['status'] === 'Complete'): ?>
                                     <span>Completed</span>
                                 <?php endif; ?>
+
                             </td>
                         </tr>
                     <?php endforeach; ?>

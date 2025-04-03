@@ -13,8 +13,8 @@ $resultCheckStatus = $conn->query($sqlCheckStatus);
 
 if ($resultCheckStatus->num_rows > 0) {
     $sqlPending = "SELECT COUNT(*) AS pending FROM orders WHERE status = 'pending'";
-    $sqlCompleted = "SELECT COUNT(*) AS completed FROM orders WHERE status = 'completed'";
-    $sqlOutForDelivery = "SELECT COUNT(*) AS out_delivery FROM orders WHERE status = 'out for delivery'";
+    $sqlCompleted = "SELECT COUNT(*) AS completed FROM orders WHERE status = 'complete'";
+    $sqlOutForDelivery = "SELECT COUNT(*) AS out_delivery FROM orders WHERE status = 'ofd'";
     $sqlTotal = "SELECT COUNT(*) AS total FROM orders";
 
     $resultPending = $conn->query($sqlPending);
