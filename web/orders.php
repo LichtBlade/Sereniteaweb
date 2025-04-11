@@ -53,14 +53,16 @@ tr:nth-child(even) {
 <body>
 
 <div class="container">
-    <h2>Orders List</h2>
     <div class="orders-list">
         <?php if (count($orders) > 0): ?>
+            <h2>Orders List</h2>
             <table>
                 <thead>
                     <tr>
                         <th>Customer Name</th>
                         <th>Item ID</th>
+                        <th>Sugar Level</th>
+                        <th>Add On</th>
                         <th>Quantity</th>
                         <th>Total Price</th>
                         <th>Order Date</th>
@@ -75,6 +77,8 @@ tr:nth-child(even) {
                         <tr>
                             <td data-label="Customer Name"><?= htmlspecialchars($order['customer_name']) ?></td>
                             <td data-label="Item ID"><?= htmlspecialchars($order['item_id']) ?></td>
+                            <td data-label="Sugar_level"><?= htmlspecialchars($order['sugar_level']) ?></td>
+                            <td data-label="Quantity"><?= htmlspecialchars($order['add_ons']) ?></td>
                             <td data-label="Quantity"><?= htmlspecialchars($order['quantity']) ?></td>
                             <td data-label="Total Price"><?= htmlspecialchars($order['total_price']) ?></td>
                             <td data-label="Order Date"><?= htmlspecialchars($order['order_date']) ?></td>

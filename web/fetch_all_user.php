@@ -49,9 +49,10 @@ tr:nth-child(even) {
 </head>
 <body>
     <div class="container">
-        <h2>Users List</h2>
+        
         <div class="users-list">
             <?php if (count($users) > 0): ?>
+                <h2>Users List</h2>
                 <table>
                     <thead>
                         <tr>

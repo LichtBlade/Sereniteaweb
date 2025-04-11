@@ -144,7 +144,7 @@ form button {
 </head>
 <body>
 
-    <h2>Food</h2>
+    <!-- <h2>Food</h2>
     <button onclick="$('#foodForm').toggle()">+ Add Food</button>
     <form id="foodForm" style="display:none;" enctype="multipart/form-data">
         <input type="text" id="food_name" placeholder="Name" required>
@@ -165,7 +165,7 @@ form button {
             </tr>
         </thead>
         <tbody id="foodTable"></tbody>
-    </table>
+    </table> -->
 
     <h2>Beverages</h2>
     <button onclick="$('#bevForm').toggle()">+ Add Beverage</button>
@@ -197,7 +197,7 @@ form button {
 
 
     <!-- Edit Food Modal -->
-<div id="editFoodModal" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%, -50%); background:white; padding:20px; border:1px solid #ccc;">
+<!-- <div id="editFoodModal" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%, -50%); background:white; padding:20px; border:1px solid #ccc;">
     <h3>Edit Food</h3>
     <input type="hidden" id="edit_food_id">
     <input type="text" id="edit_food_name" placeholder="Name">
@@ -207,7 +207,7 @@ form button {
     <input type="text" id="edit_food_description" placeholder="Description">
     <button onclick="updateFood()">Update</button>
     <button onclick="$('#editFoodModal').hide()">Cancel</button>
-</div>
+</div> -->
 
 <!-- Edit Beverage Modal -->
 <div id="editBevModal" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%, -50%); background:white; padding:20px; border:1px solid #ccc;">
@@ -223,9 +223,6 @@ form button {
     <button onclick="updateBeverage()">Update</button>
     <button onclick="$('#editBevModal').hide()">Cancel</button>
 </div>
-
-
-
 
 
 
